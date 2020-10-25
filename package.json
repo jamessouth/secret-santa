@@ -1,0 +1,47 @@
+{
+  "name": "secret-santa",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run watch:css && bsb -make-world -w -ws _ ",
+    "server": "moduleserve ./ --port 4444",
+    "build": "npm run clean && bsb -make-world && npm run build:css && parcel build ./index.html -d docs --no-source-maps --public-url ./",
+    "clean": "bsb -clean-world && rm -rf docs",
+    "test": "jest --collectCoverage",
+    "watch:css": "postcss ./src/css/tailwind.css -o ./src/css/main.css",
+    "build:css": "postcss ./src/css/tailwind.css -o ./src/css/main.css --env 'production'"
+  },
+  "keywords": [
+    "BuckleScript",
+    "ReasonReact",
+    "reason-react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamessouth/secret-santa.git"
+  },
+  "author": "james south",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "reason-react": ">=0.7.1"
+  },
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.5.1",
+    "autoprefixer": "^9.8.6",
+    "bs-jest-dom": "^4.1.1",
+    "bs-platform": "8.2.0",
+    "bs-react-testing-library": "^0.8.0",
+    "jest": "^26.6.1",
+    "moduleserve": "^0.9.0",
+    "parcel-bundler": "^1.12.4",
+    "postcss-cli": "^8.1.0",
+    "tailwindcss": "^1.9.6"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "TestUtils"
+    ]
+  }
+}
