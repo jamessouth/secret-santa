@@ -5,6 +5,7 @@
   "scripts": {
     "start": "npm run watch:css && bsb -make-world -w -ws _ ",
     "server": "moduleserve ./ --port 4444",
+    "back": "go run .\\src\\back\\main.go",
     "build": "npm run clean && bsb -make-world && npm run build:css && parcel build ./index.html -d docs --no-source-maps --public-url ./",
     "clean": "bsb -clean-world && rm -rf docs",
     "test": "jest --collectCoverage",
