@@ -1,4 +1,7 @@
 [@react.component]
 let make = () => {
-    <p>"hello"->React.string</p>
+    <>
+        <p>"hello"->React.string</p>
+        <Form/>
+    </>
 };
