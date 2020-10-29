@@ -29,7 +29,7 @@ let make = () => {
     //     );
     // };
 
-    <form action="http://localhost:8000" method="POST">
+    <form action="http://localhost:8000/create" method="POST">
         <div>
             <input
                 onChange={
