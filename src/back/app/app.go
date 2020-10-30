@@ -19,7 +19,7 @@ func Init(ses *session.Session) {
 	// fs := http.FileServer(http.Dir("./dist"))
 	// http.Handle("/", fs)
 	sess = ses
-	// fmt.Println("sess", sess)
+
 	// http.HandleFunc("/", handleConns)
 	http.HandleFunc("/create", handleCreate)
 
@@ -27,19 +27,6 @@ func Init(ses *session.Session) {
 	if !ok {
 		port = "8000"
 	}
-	aaa, ok := os.LookupEnv("AWS_ACCESS_KEY_ID")
-	if !ok {
-		fmt.Println("aaaaa")
-	}
-	bbb, ok := os.LookupEnv("AWS_REGION")
-	if !ok {
-		fmt.Println("bbbbbb")
-	}
-	ccc, ok := os.LookupEnv("AWS_SECRET_ACCESS_KEY")
-	if !ok {
-		fmt.Println("ccccccc")
-	}
-	fmt.Println("env", aaa, bbb, ccc)
 	log.Println("server running on port " + port)
 	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
