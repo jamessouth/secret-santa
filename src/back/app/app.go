@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -19,6 +20,8 @@ func Init(ses *session.Session) {
 	// fs := http.FileServer(http.Dir("./dist"))
 	// http.Handle("/", fs)
 	sess = ses
+
+	lambda.Start()
 
 	// http.HandleFunc("/", handleConns)
 	http.HandleFunc("/create", handleCreate)
