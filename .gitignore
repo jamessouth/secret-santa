@@ -30,6 +30,7 @@ bin
 *.dll
 *.so
 *.dylib
+*Function/
 
 # Test binary, build with `go test -c`
 *.test
